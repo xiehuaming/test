@@ -14,7 +14,7 @@ jobs:
       - name: Fix zotero sync
         run: |
           export SYNCFILE="lastsync.txt"
-          export REMOTEFILE="http://xiedejia.6655.la:5005/webdav/share/zotero/${SYNCFILE}"
+          export REMOTEFILE="http://xiedejia.6655.la:5005/webdav/Share/zotero/${SYNCFILE}"
           touch ${SYNCFILE}
           curl -u ${WEBDAV_EMAIL}:${WEBDAV_DAVPASS} -T ${SYNCFILE} ${REMOTEFILE}
         env:
