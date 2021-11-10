@@ -1,6 +1,5 @@
 # This is a basic workflow to help you get started with Actions
 
-
 name: webdav_lastsync
 
 on:
@@ -17,7 +16,7 @@ jobs:
           export SYNCFILE="lastsync.txt"
           export REMOTEFILE="http://xiedejia.6655.la:5005/webdav/share/zotero/${SYNCFILE}"
           touch ${SYNCFILE}
-          curl -u ${KOOFR_EMAIL}:${KOOFR_DAVPASS} -T ${SYNCFILE} ${REMOTEFILE}
+          curl -u ${WEBDAV_EMAIL}:${WEBDAV_DAVPASS} -T ${SYNCFILE} ${REMOTEFILE}
         env:
-          KOOFR_EMAIL: ${{ secrets.KOOFR_EMAIL }}
-          KOOFR_DAVPASS: ${{ secrets.KOOFR_DAVPASS }}
+          KOOFR_EMAIL: ${{ secrets.WEBDAV_EMAIL }}
+          KOOFR_DAVPASS: ${{ secrets.WEBDAV_DAVPASS }}
