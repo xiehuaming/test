@@ -8,10 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  fix:
+  fix-sync:
     runs-on: ubuntu-18.04
     steps:
-      - name: Fix
+      - name: Fix zotero sync
         run: |
           export SYNCFILE="lastsync.txt"
           export REMOTEFILE="http://xiedejia.6655.la:5005/webdav/share/zotero/${SYNCFILE}"
